@@ -13,5 +13,12 @@ public class Doctor extends Person {
         this.patients = new ArrayList<>();
     }
 
+        /**
+     * 
+    * 
+    * @author Stephen
+    * @version 1.0
+    */
+
     // Getters & Setters (To be implemented)
 }

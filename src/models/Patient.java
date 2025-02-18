@@ -13,5 +13,12 @@ public class Patient extends Person {
         this.prescriptions = new ArrayList<>();
     }
 
+        /**
+     * 
+    * 
+    * @author Stephen
+    * @version 1.0
+    */
+
     // Getters & Setters (To be implemented)
 }

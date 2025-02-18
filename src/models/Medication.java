@@ -19,5 +19,12 @@ public class Medication {
         this.expiryDate = expiryDate;
     }
 
+        /**
+     * 
+    * 
+    * @author Stephen
+    * @version 1.0
+    */
+
     // Getters & Setters (To be implemented)
 }

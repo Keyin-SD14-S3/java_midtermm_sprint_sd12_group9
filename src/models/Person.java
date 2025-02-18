@@ -13,5 +13,12 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+        /**
+     * 
+    * 
+    * @author Stephen
+    * @version 1.0
+    */
+
     // Getters & Setters (To be implemented)
 }

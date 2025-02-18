@@ -27,5 +27,11 @@ public class TestMedicationTrackingSystem {
         system.addMedication(med1);
         system.addMedication(med2);
         system.addMedication(med3);
+        
+        // Searching for existing medication
+        system.searchMedicationByName("Ibuprofen");
+        
+        // Searching for a medication that doesn't exist
+        system.searchMedicationByName("Vitamin C");
     }
 }

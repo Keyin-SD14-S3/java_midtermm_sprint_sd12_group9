@@ -47,6 +47,21 @@ public class Medication {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    /**
+     * Returns a string representation of the medication.
+     * 
+     * @return A formatted string containing medication details.
+     */
+    @Override
+    public String toString() {
+        return "Medication{" +
+            "ID='" + id + '\'' +
+            ", Name='" + name + '\'' +
+            ", Quantity=" + quantity +
+            ", Expiry Date=" + expiryDate +
+            '}';
+    }
 }
 
 

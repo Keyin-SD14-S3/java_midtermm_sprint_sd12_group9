@@ -7,7 +7,9 @@ import src.models.Prescription;
 import java.text.SimpleDateFormat;
 
     /**
-     * 
+    * Testing MedicationTrackingSystem 
+    *
+    * 
     * 
     * @author Stephen
     * @version 1.0

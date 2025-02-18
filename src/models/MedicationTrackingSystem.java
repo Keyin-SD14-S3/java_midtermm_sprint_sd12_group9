@@ -52,4 +52,15 @@ public class MedicationTrackingSystem {
         }
         System.out.println("Medication not found.");
     }
+
+    /**
+     * Adds a new medication to the system.
+     * 
+     * @param medication The medication to be added.
+     */
+    public void addMedication(Medication medication) {
+        medications.add(medication);
+        System.out.println("Medication added: " + medication.getName());
+    }
+
 }

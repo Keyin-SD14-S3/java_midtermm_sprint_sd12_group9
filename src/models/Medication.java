@@ -38,6 +38,15 @@ public class Medication {
     public String getName() {
         return name;
     }
+
+      /**
+     * Sets the quantity of the medication in stock.
+     * 
+     * @param quantity The new quantity value.
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
 
 

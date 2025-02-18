@@ -1,10 +1,9 @@
-package test;
 
-import models.Medication;
-import models.MedicationTrackingSystem;
-import models.Doctor;
-import models.Patient;
-import models.Prescription;
+import src.models.Medication;
+import src.models.MedicationTrackingSystem;
+import src.models.Doctor;
+import src.models.Patient;
+import src.models.Prescription;
 import java.text.SimpleDateFormat;
 
 public class TestMedicationTrackingSystem {
@@ -12,4 +11,5 @@ public class TestMedicationTrackingSystem {
         // Create MedicationTrackingSystem instance
         MedicationTrackingSystem system = new MedicationTrackingSystem();
 
-  
+    }
+}

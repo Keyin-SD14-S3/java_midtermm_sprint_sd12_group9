@@ -3,14 +3,20 @@ package src.models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
- * The MedicationTrackingSystem class manages the pharmacy system, including
- * medications, doctors, and patients. It provides functionality for:
+ * The MedicationTrackingSystem class manages patients, doctors, medications, and prescriptions.
+ * It provides functionalities such as searching, adding, editing, deleting, and generating reports.
+ * 
+ * Features include:
+ * - Searching for medications, patients, and doctors
+ * - Assigning patients to doctors
+ * - Accepting prescriptions and linking them to patients
+ * - Editing and deleting records
+ * - Generating system-wide reports
+ * - Checking and displaying expired medications
  * - Restocking medications
- * - Checking for expired medications
- * - Managing lists of patients, doctors, and medications
- * - Generating reports
  * 
  * @author Stephen
  * @version 1.0
@@ -30,4 +36,20 @@ public class MedicationTrackingSystem {
         this.patients = new ArrayList<>();
     }
 
+    // ========================== Search Functions ==========================
+
+    /**
+     * Searches for a medication by name.
+     * 
+     * @param name The name of the medication to search for.
+     */
+    public void searchMedicationByName(String name) {
+        for (Medication med : medications) {
+            if (med.getName().equalsIgnoreCase(name)) {
+                System.out.println("Medication Found: " + med);
+                return;
+            }
+        }
+        System.out.println("Medication not found.");
+    }
 }

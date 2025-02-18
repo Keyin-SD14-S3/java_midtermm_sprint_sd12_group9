@@ -54,6 +54,36 @@ public class MedicationTrackingSystem {
     }
 
     /**
+     * Searches for a patient by name.
+     * 
+     * @param name The name of the patient to search for.
+     */
+    public void searchPatientByName(String name) {
+        for (Patient patient : patients) {
+            if (patient.getName().equalsIgnoreCase(name)) {
+                System.out.println("Patient Found: " + patient);
+                return;
+            }
+        }
+        System.out.println("Patient not found.");
+    }
+
+    /**
+     * Searches for a doctor by name.
+     * 
+     * @param name The name of the doctor to search for.
+     */
+    public void searchDoctorByName(String name) {
+        for (Doctor doctor : doctors) {
+            if (doctor.getName().equalsIgnoreCase(name)) {
+                System.out.println("Doctor Found: " + doctor);
+                return;
+            }
+        }
+        System.out.println("Doctor not found.");
+    }
+
+    /**
      * Adds a new medication to the system.
      * 
      * @param medication The medication to be added.

@@ -132,7 +132,6 @@ public class Doctor extends Person {
             ", Age=" + getAge() +
             ", Phone Number='" + getPhoneNumber() + '\'' +
             ", Specialty='" + specialty + '\'' +
-            ", Patients Count=" + patients.size() +
             '}';
     }
 }

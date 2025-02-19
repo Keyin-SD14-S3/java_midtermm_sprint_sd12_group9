@@ -63,7 +63,6 @@ public class TestMedicationTrackingSystem {
          // Deleting a patient
          System.out.println("\n=== Deleting Patient ===");
          system.deletePatient("P001");
- 
          // Deleting a doctor
          System.out.println("\n=== Deleting Doctor ===");
          system.deleteDoctor("D002"); 

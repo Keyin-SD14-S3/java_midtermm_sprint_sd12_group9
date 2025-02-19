@@ -229,17 +229,15 @@ public void editMedication(String medicationId, String newName, int newQuantity,
      * @param patientId The ID of the patient to delete.
      */
     public void deletePatient(String patientId) {
-        Iterator<Patient> iterator = patients.iterator();
-        while (iterator.hasNext()) {
-            Patient patient = iterator.next();
-            if (patient.getId().equals(patientId)) {
-                iterator.remove();
-                System.out.println("Patient deleted successfully.");
-                return;
-            }
+        boolean removed = patients.removeIf(patient -> patient.getId().equals(patientId));
+
+        if (removed) {
+            System.out.println("Patient deleted successfully.");
+        } else {
+            System.out.println("Patient not found.");
         }
-        System.out.println("Patient not found.");
-    }
+}
+
 
     /**
      * Deletes a doctor by ID.

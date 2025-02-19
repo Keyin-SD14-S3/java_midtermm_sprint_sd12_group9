@@ -85,14 +85,15 @@ public class MedicationTrackingSystem {
     }
 
     /**
-     * Adds a new medication to the system.
-     * 
-     * @param medication The medication to be added.
-     */
+    * Adds a new medication to the system.
+    * 
+    * @param medication The medication to be added.
+    */
     public void addMedication(Medication medication) {
         medications.add(medication);
-        System.out.println("Medication added: " + medication.getName());
+        System.out.println("Medication added: " + medication.getName() + " (Dosage: " + medication.getDosage() + ")");
     }
+
 
      /**
      * Edits a medication's details by ID.
@@ -100,18 +101,21 @@ public class MedicationTrackingSystem {
      * @param medicationId The ID of the medication to edit.
      * @param newName The new name of the medication.
      * @param newQuantity The new quantity.
+     * @param newDosage The new dosage.
      */
-    public void editMedication(String medicationId, String newName, int newQuantity) {
+    public void editMedication(String medicationId, String newName, int newQuantity, String newDosage) {
         for (Medication med : medications) {
             if (med.getId().equals(medicationId)) {
                 med.setName(newName);
                 med.setQuantity(newQuantity);
-                System.out.println("Medication updated successfully.");
+                med.setDosage(newDosage);  // NEW FIELD UPDATED
+                System.out.println("Medication updated successfully: " + med);
                 return;
             }
         }
-        System.out.println("Medication not found.");
-    }
+        
+    System.out.println("Medication not found.");
+}
 
     /**
      * Edits a doctor's details by ID.

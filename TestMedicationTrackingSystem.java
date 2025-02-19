@@ -18,11 +18,11 @@ public class TestMedicationTrackingSystem {
         // Create the system instance
         MedicationTrackingSystem system = new MedicationTrackingSystem();
 
-        // ======= TESTING MEDICATION MANAGEMENT =======
+        // ======= TESTING MEDICATION MANAGEMENT adding dosage=======
         System.out.println("\n=== Adding Medications ===");
-        Medication med1 = new Medication("M101", "Buckleys", 20, LocalDate.of(2025, 5, 10));
-        Medication med2 = new Medication("M102", "Aspirin", 15, LocalDate.of(2026, 8, 5));
-        Medication med3 = new Medication("M103", "Ibuprofen", 30, LocalDate.of(2024, 12, 20));
+        Medication med1 = new Medication("M101", "Buckleys", 20, "10ml", LocalDate.of(2025, 5, 10));
+        Medication med2 = new Medication("M102", "Aspirin", 15, "500mg", LocalDate.of(2023, 8, 5));
+        Medication med3 = new Medication("M103", "Ibuprofen", 30, "200mg", LocalDate.of(2024, 12, 20));
 
         system.addMedication(med1);
         system.addMedication(med2);
@@ -57,7 +57,7 @@ public class TestMedicationTrackingSystem {
 
           // Editing a medication
         System.out.println("\n=== Editing Medication ===");
-        system.editMedication("M103", "Ibuprofen Extra Strength", 50);
+        system.editMedication("M103", "Ibuprofen Extra Strength", 50, "25mg");
  
          // Deleting a patient
          System.out.println("\n=== Deleting Patient ===");

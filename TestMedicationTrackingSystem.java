@@ -67,16 +67,24 @@ public class TestMedicationTrackingSystem {
          System.out.println("\n=== Deleting Doctor ===");
          system.deleteDoctor("D002"); 
 
-        // ======= TESTING PRESCRIPTION MANAGEMENT =======
-        System.out.println("\n=== Adding Prescription ===");
-        system.acceptPrescription("PRESC001", "D001", "P002", "M103", LocalDate.of(2025, 6, 15));
+       
+        // ======= GENERATING SYSTEM REPORT =======
+        System.out.println("\n=== Generating System Report ===");
+        system.generateSystemReport();
+        
+        // ======= CHECKING FOR EXPIRED MEDICATIONS =======
+        System.out.println("\n=== Checking for Expired Medications ===");
+        system.checkForExpiredMedications();
 
-              // ======= GENERATING SYSTEM REPORT =======
-              System.out.println("\n=== Generating System Report ===");
-              system.generateSystemReport();
-              
-              // ======= CHECKING FOR EXPIRED MEDICATIONS =======
-              System.out.println("\n=== Checking for Expired Medications ===");
-              system.checkForExpiredMedications();
-          }
-      }
+         // Accepting prescriptions
+         System.out.println("\n=== Accepting Prescriptions ===");
+         system.acceptPrescription("PRESC001", "D001", "P001", "M101", LocalDate.of(2025, 6, 15));
+         system.acceptPrescription("PRESC002", "D002", "P002", "M103", LocalDate.of(2026, 1, 10));
+         system.acceptPrescription("PRESC003", "D001", "P003", "M101", LocalDate.of(2025, 11, 20));
+ 
+         // ======= PRINT PRESCRIPTIONS BY DOCTOR =======
+         System.out.println("\n=== Printing Prescriptions by Dr. Smith (D001) ===");
+         system.printPrescriptionsByDoctor("D001");
+    
+    }
+}

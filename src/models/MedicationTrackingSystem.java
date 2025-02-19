@@ -336,4 +336,25 @@ public class MedicationTrackingSystem {
         }
     }
 
+        /**
+     * Prints a list of all prescriptions issued by a specific doctor.
+     * 
+     * @param doctorId The ID of the doctor whose prescriptions are to be listed.
+     */
+    public void printPrescriptionsByDoctor(String doctorId) {
+        System.out.println("\n=== Prescriptions Issued by Doctor ID: " + doctorId + " ===");
+        boolean found = false;
+        
+        for (Prescription presc : prescriptions) {
+            if (presc.getDoctor().getId().equals(doctorId)) {
+                System.out.println(presc);
+                found = true;
+            }
+        }
+        
+        if (!found) {
+            System.out.println("No prescriptions found for this doctor.");
+        }
+    }
+
 }

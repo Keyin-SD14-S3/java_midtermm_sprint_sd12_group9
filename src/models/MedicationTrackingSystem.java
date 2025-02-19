@@ -85,34 +85,78 @@ public class MedicationTrackingSystem {
     }
 
     /**
-    * Adds a new medication to the system.
-    * 
-    * @param medication The medication to be added.
-    */
+     * Adds a new medication to the system, ensuring the ID is unique.
+     * 
+     * @param medication The medication to be added.
+     */
     public void addMedication(Medication medication) {
-        medications.add(medication);
-        System.out.println("Medication added: " + medication.getName() + " (Dosage: " + medication.getDosage() + ")");
+        for (Medication existingMedication : medications) {
+            if (existingMedication.getId().equals(medication.getId())) {
+                System.out.println("Error: A medication with ID " + medication.getId() + " already exists.");
+                return;
+        }
     }
 
+    medications.add(medication);
+    System.out.println("Medication added: " + medication.getName() + " (ID: " + medication.getId() + ")");
+}
+
+
     /**
-     * Adds a new doctor to the system.
+     * Adds a new doctor to the system, ensuring the ID is unique.
      * 
      * @param doctor The doctor to be added.
      */
     public void addDoctor(Doctor doctor) {
-        doctors.add(doctor);
-        System.out.println("Doctor added: " + doctor.getName() + " (Specialty: " + doctor.getSpecialty() + ")");
+        for (Doctor existingDoctor : doctors) {
+            if (existingDoctor.getId().equals(doctor.getId())) {
+                System.out.println("Error: A doctor with ID " + doctor.getId() + " already exists.");
+                return;
+        }
     }
 
+    doctors.add(doctor);
+    System.out.println("Doctor added: " + doctor.getName() + " (ID: " + doctor.getId() + ")");
+}
+
+
     /**
-     * Adds a new patient to the system.
+     * Adds a new patient to the system, ensuring the ID is unique.
      * 
      * @param patient The patient to be added.
      */
     public void addPatient(Patient patient) {
-        patients.add(patient);
-        System.out.println("Patient added: " + patient.getName() + " (Age: " + patient.getAge() + ", Phone: " + patient.getPhoneNumber() + ")");
+        // Check if a patient with the same ID already exists
+        for (Patient existingPatient : patients) {
+            if (existingPatient.getId().equals(patient.getId())) {
+                System.out.println("Error: A patient with ID " + patient.getId() + " already exists.");
+                return;
+        }
     }
+    
+    // If the ID is unique, add the patient
+    patients.add(patient);
+    System.out.println("Patient added: " + patient.getName() + " (ID: " + patient.getId() + ")");
+}
+
+    /**
+     * Adds a new prescription to the system, ensuring the ID is unique.
+     * 
+     * @param prescription The prescription to be added.
+     */
+    public void addPrescription(Prescription prescription) {
+        for (Prescription existingPrescription : prescriptions) {
+            if (existingPrescription.getId().equals(prescription.getId())) {
+                System.out.println("Error: A prescription with ID " + prescription.getId() + " already exists.");
+                return;
+        }
+    }
+
+    prescriptions.add(prescription);
+    System.out.println("Prescription added for patient " + prescription.getPatient().getName() + 
+                       " (Prescription ID: " + prescription.getId() + ")");
+}
+
 
 
      /**

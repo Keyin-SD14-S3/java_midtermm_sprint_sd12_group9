@@ -39,6 +39,16 @@ public class Medication {
         return name;
     }
 
+    /**
+     * Gets the ID of the medication.
+     * 
+     * @return The medication ID.
+     */
+    public String getId() {
+        return id;
+    }
+
+
       /**
      * Sets the quantity of the medication in stock.
      * 

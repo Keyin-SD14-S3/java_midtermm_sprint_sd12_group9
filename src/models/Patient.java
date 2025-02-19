@@ -10,8 +10,7 @@ import java.util.List;
  * @author Stephen
  * @version 1.0
  */
-
- public class Patient extends Person {
+public class Patient extends Person {
     private List<Prescription> prescriptions;
 
     /**
@@ -33,8 +32,38 @@ import java.util.List;
      * @return The name of the patient.
      */
     public String getName() {
-        return super.getName(); // Calls getName() from Person
+        return super.getName();
     }
 
-    // Getters & Setters (To be implemented)
+    /**
+     * Adds a prescription to the patient's list.
+     * 
+     * @param prescription The prescription to add.
+     */
+    public void addPrescription(Prescription prescription) {
+        prescriptions.add(prescription);
+    }
+
+    /**
+     * Gets the list of prescriptions assigned to the patient.
+     * 
+     * @return The list of prescriptions.
+     */
+    public List<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    /**
+     * Returns a string representation of the patient.
+     * 
+     * @return A formatted string containing patient details.
+     */
+    @Override
+    public String toString() {
+        return "Patient{" +
+            "ID='" + getId() + '\'' +
+            ", Name='" + getName() + '\'' +
+            ", Prescriptions Count=" + prescriptions.size() +
+            '}';
+    }
 }

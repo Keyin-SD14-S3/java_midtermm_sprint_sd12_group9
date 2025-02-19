@@ -44,5 +44,9 @@ public class TestMedicationTrackingSystem {
 
         // Assign patient to doctor
         system.addPatientToDoctor("D001", pat1);
+
+        // ======= TESTING PRESCRIPTION MANAGEMENT =======
+        System.out.println("\n=== Adding Prescription ===");
+        system.acceptPrescription("PRESC001", "D001", "P001", "M103", LocalDate.of(2025, 6, 15));
     }
 }

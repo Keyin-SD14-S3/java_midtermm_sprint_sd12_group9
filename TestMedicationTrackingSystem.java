@@ -91,6 +91,28 @@ public class TestMedicationTrackingSystem {
         System.out.println("\n=== Restocking Medications ===");
         system.restockMedication("M101", 10); // Add 10 units to Buckleys
         system.restockMedication("M103", 20); // Add 20 units to Ibuprofen Extra Strength
-    
+        
+        // ======= TESTING EDITING PATIENT AND DOCTOR =======
+        System.out.println("\n=== Editing Patient ===");
+        system.editPatient("P002", "Johnathan Doe", 31, "555-9999");
+
+        System.out.println("\n=== Editing Doctor ===");
+        system.editDoctor("D001", "Dr. John Smith", 46, "555-8888", "General Surgery");
+
+        // Verify updates by printing the updated patient and doctor details
+        System.out.println("\n=== Updated Patient Details ===");
+        for (Patient pat : system.getPatients()) {
+            if (pat.getId().equals("P001")) {
+                System.out.println(pat);
+            }
+        }
+
+        System.out.println("\n=== Updated Doctor Details ===");
+        for (Doctor doc : system.getDoctors()) {
+            if (doc.getId().equals("D001")) {
+                System.out.println(doc);
+            }
+        }
+
     }
 }

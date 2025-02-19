@@ -114,6 +114,51 @@ public class MedicationTrackingSystem {
     }
 
     /**
+     * Edits a doctor's details by ID.
+     *
+     * @param doctorId The ID of the doctor to edit.
+     * @param newName The new name of the doctor.
+     * @param newAge The new age of the doctor.
+     * @param newPhoneNumber The new contact number of the doctor.
+     * @param newSpecialty The new specialty of the doctor.
+     */
+    public void editDoctor(String doctorId, String newName, int newAge, String newPhoneNumber, String newSpecialty) {
+        for (Doctor doc : doctors) {
+            if (doc.getId().equals(doctorId)) {
+                doc.setName(newName);
+                doc.setAge(newAge);
+                doc.setPhoneNumber(newPhoneNumber);
+                doc.setSpecialty(newSpecialty);
+                System.out.println("Doctor updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Doctor not found.");
+    }
+
+     /**
+     * Edits a patient's details by ID.
+     *
+     * @param patientId The ID of the patient to edit.
+     * @param newName The new name of the patient.
+     * @param newAge The new age of the patient.
+     * @param newPhoneNumber The new contact number of the patient.
+     */
+    public void editPatient(String patientId, String newName, int newAge, String newPhoneNumber) {
+        for (Patient pat : patients) {
+            if (pat.getId().equals(patientId)) {
+                pat.setName(newName);
+                pat.setAge(newAge);
+                pat.setPhoneNumber(newPhoneNumber);
+                System.out.println("Patient updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Patient not found.");
+    }
+
+
+    /**
      * Deletes a medication from the system by ID.
      * 
      * @param medicationId The ID of the medication to delete.

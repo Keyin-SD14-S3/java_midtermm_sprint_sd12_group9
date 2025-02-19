@@ -5,51 +5,113 @@ import java.util.List;
 
 /**
  * Represents a doctor in the pharmacy system.
- * A doctor has a specialization and manages multiple patients.
+ * A doctor can have multiple assigned patients.
  * 
  * @author Stephen
  * @version 1.0
  */
 public class Doctor extends Person {
-    private String specialization;
+    private String specialty;
     private List<Patient> patients;
 
     /**
      * Constructs a new Doctor with the given details.
      * 
-     * @param id            The unique identifier for the doctor.
-     * @param name          The name of the doctor.
-     * @param age           The age of the doctor.
-     * @param phoneNumber   The doctor's contact number.
-     * @param specialization The doctor's field of specialization.
+     * @param id          The unique identifier for the doctor.
+     * @param name        The name of the doctor.
+     * @param age         The age of the doctor.
+     * @param phoneNumber The doctor's contact number.
+     * @param specialty   The doctor's medical specialty.
      */
-    public Doctor(String id, String name, int age, String phoneNumber, String specialization) {
+    public Doctor(String id, String name, int age, String phoneNumber, String specialty) {
         super(id, name, age, phoneNumber); // Calls the constructor of Person
-        this.specialization = specialization;
+        this.specialty = specialty;
         this.patients = new ArrayList<>();
     }
 
     /**
-     * Gets the doctor's specialization.
+     * Gets the doctor's name.
      * 
-     * @return The specialization of the doctor.
+     * @return The name of the doctor.
      */
-    public String getSpecialization() {
-        return specialization;
+    public String getName() {
+        return super.getName();
+    }
+
+    /**
+     * Sets the doctor's name.
+     * 
+     * @param name The new name of the doctor.
+     */
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    /**
+     * Gets the doctor's age.
+     * 
+     * @return The age of the doctor.
+     */
+    public int getAge() {
+        return super.getAge();
+    }
+
+    /**
+     * Sets the doctor's age.
+     * 
+     * @param age The new age of the doctor.
+     */
+    public void setAge(int age) {
+        super.setAge(age);
+    }
+
+    /**
+     * Gets the doctor's phone number.
+     * 
+     * @return The phone number of the doctor.
+     */
+    public String getPhoneNumber() {
+        return super.getPhoneNumber();
+    }
+
+    /**
+     * Sets the doctor's phone number.
+     * 
+     * @param phoneNumber The new phone number of the doctor.
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        super.setPhoneNumber(phoneNumber);
+    }
+
+    /**
+     * Gets the doctor's specialty.
+     * 
+     * @return The medical specialty of the doctor.
+     */
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    /**
+     * Sets the doctor's specialty.
+     * 
+     * @param specialty The new specialty of the doctor.
+     */
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 
     /**
      * Adds a patient to the doctor's list.
      * 
-     * @param patient The patient to be added.
+     * @param patient The patient to add.
      */
     public void addPatient(Patient patient) {
         patients.add(patient);
-        System.out.println("Patient " + patient.getName() + " added to Doctor " + this.getName());
     }
 
     /**
-     * Gets the list of patients assigned to this doctor.
+     * Gets the list of patients assigned to the doctor.
      * 
      * @return The list of patients.
      */
@@ -67,8 +129,10 @@ public class Doctor extends Person {
         return "Doctor{" +
             "ID='" + getId() + '\'' +
             ", Name='" + getName() + '\'' +
-            ", Specialization='" + specialization + '\'' +
-            ", Patients Assigned=" + patients.size() +
+            ", Age=" + getAge() +
+            ", Phone Number='" + getPhoneNumber() + '\'' +
+            ", Specialty='" + specialty + '\'' +
+            ", Patients Count=" + patients.size() +
             '}';
     }
 }

@@ -28,31 +28,24 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    /** 
-     * Gets the ID of the person. 
-     * 
-     * @return The person's ID.
-     */
+    /** Gets the ID of the person. */
     public String getId() { return id; }
 
-    /** 
-     * Gets the name of the person.
-     * 
-     * @return The person's name.
-     */
+    /** Gets the name of the person. */
     public String getName() { return name; }
 
-    /** 
-     * Gets the age of the person.
-     * 
-     * @return The person's age.
-     */
+    /** Gets the age of the person. */
     public int getAge() { return age; }
 
-    /** 
-     * Gets the phone number of the person.
-     * 
-     * @return The person's phone number.
-     */
+    /** Gets the phone number of the person. */
     public String getPhoneNumber() { return phoneNumber; }
+
+    /** Sets the name of the person. */
+    public void setName(String name) { this.name = name; }
+
+    /** Sets the age of the person. */
+    public void setAge(int age) { this.age = age; }
+
+    /** Sets the phone number of the person. */
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 }

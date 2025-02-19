@@ -48,6 +48,24 @@ public class Medication {
         return id;
     }
 
+      /**
+     * Gets the expiration date of the medication.
+     * 
+     * @return The expiration date.
+     */
+    public LocalDate getExpiryDate() {
+        return expiryDate;
+    }
+
+    /**
+     * Gets the quantity of the medication in stock.
+     * 
+     * @return The medication quantity.
+     */
+    public int getQuantity() {
+        return quantity;
+    }
+
 
      /**
      * Sets the name of the medication.
@@ -83,6 +101,3 @@ public class Medication {
             '}';
     }
 }
-
-
-    // Getters & Setters (To be implemented)

@@ -284,7 +284,7 @@ public class MedicationTrackingSystem {
                 System.out.println(med);
             }
         }
-
+    
         // List all doctors
         System.out.println("\nDoctors:");
         if (doctors.isEmpty()) {
@@ -294,7 +294,7 @@ public class MedicationTrackingSystem {
                 System.out.println(doc);
             }
         }
-
+    
         // List all patients
         System.out.println("\nPatients:");
         if (patients.isEmpty()) {
@@ -304,7 +304,7 @@ public class MedicationTrackingSystem {
                 System.out.println(pat);
             }
         }
-
+    
         // List all prescriptions
         System.out.println("\nPrescriptions:");
         if (prescriptions.isEmpty()) {
@@ -313,6 +313,26 @@ public class MedicationTrackingSystem {
             for (Prescription presc : prescriptions) {
                 System.out.println(presc);
             }
+        }
+    } 
+
+         /**
+     * Checks for expired medications and displays them.
+     */
+    public void checkForExpiredMedications() {
+        System.out.println("\n=== Expired Medications Check ===");
+        LocalDate today = LocalDate.now();
+        boolean foundExpired = false;
+
+        for (Medication med : medications) {
+            if (med.getExpiryDate().isBefore(today)) {
+                System.out.println("Expired Medication: " + med);
+                foundExpired = true;
+            }
+        }
+        
+        if (!foundExpired) {
+            System.out.println("No expired medications found.");
         }
     }
 

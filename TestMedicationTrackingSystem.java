@@ -71,8 +71,12 @@ public class TestMedicationTrackingSystem {
         System.out.println("\n=== Adding Prescription ===");
         system.acceptPrescription("PRESC001", "D001", "P002", "M103", LocalDate.of(2025, 6, 15));
 
-        // ======= GENERATING SYSTEM REPORT =======
-        System.out.println("\n=== Generating System Report ===");
-        system.generateSystemReport();
-    }
-}
+              // ======= GENERATING SYSTEM REPORT =======
+              System.out.println("\n=== Generating System Report ===");
+              system.generateSystemReport();
+              
+              // ======= CHECKING FOR EXPIRED MEDICATIONS =======
+              System.out.println("\n=== Checking for Expired Medications ===");
+              system.checkForExpiredMedications();
+          }
+      }

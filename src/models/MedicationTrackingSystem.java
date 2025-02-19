@@ -181,6 +181,29 @@ public class MedicationTrackingSystem {
         System.out.println("Patient not found.");
     }
 
+    /**
+ * Edits a medication's details by ID, including its expiry date.
+ * 
+ * @param medicationId The ID of the medication to edit.
+ * @param newName The new name of the medication.
+ * @param newQuantity The new quantity.
+ * @param newDosage The new dosage.
+ * @param newExpiryDate The new expiry date.
+ */
+public void editMedication(String medicationId, String newName, int newQuantity, String newDosage, LocalDate newExpiryDate) {
+    for (Medication med : medications) {
+        if (med.getId().equals(medicationId)) {
+            med.setName(newName);
+            med.setQuantity(newQuantity);
+            med.setDosage(newDosage);
+            med.setExpiryDate(newExpiryDate); // Updating expiry date
+            System.out.println("Medication updated successfully: " + med);
+            return;
+        }
+    }
+    System.out.println("Medication not found.");
+}
+
 
     /**
      * Deletes a medication from the system by ID.

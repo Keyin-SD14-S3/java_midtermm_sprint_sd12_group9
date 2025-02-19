@@ -54,6 +54,16 @@ public class Medication {
     /** Sets a new stock quantity for the medication. */
     public void setQuantity(int quantity) { this.quantity = quantity; }
 
+    /**
+     * Sets a new expiry date for the medication.
+     * 
+     * @param expiryDate The new expiration date.
+     */
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+
     /** Sets a new dosage for the medication. */
     public void setDosage(String dosage) { this.dosage = dosage; }
 

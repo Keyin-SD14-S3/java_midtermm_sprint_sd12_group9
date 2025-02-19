@@ -94,6 +94,26 @@ public class MedicationTrackingSystem {
         System.out.println("Medication added: " + medication.getName() + " (Dosage: " + medication.getDosage() + ")");
     }
 
+    /**
+     * Adds a new doctor to the system.
+     * 
+     * @param doctor The doctor to be added.
+     */
+    public void addDoctor(Doctor doctor) {
+        doctors.add(doctor);
+        System.out.println("Doctor added: " + doctor.getName() + " (Specialty: " + doctor.getSpecialty() + ")");
+    }
+
+    /**
+     * Adds a new patient to the system.
+     * 
+     * @param patient The patient to be added.
+     */
+    public void addPatient(Patient patient) {
+        patients.add(patient);
+        System.out.println("Patient added: " + patient.getName() + " (Age: " + patient.getAge() + ", Phone: " + patient.getPhoneNumber() + ")");
+    }
+
 
      /**
      * Edits a medication's details by ID.

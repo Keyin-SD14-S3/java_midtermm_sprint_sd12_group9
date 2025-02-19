@@ -30,14 +30,45 @@ public class Doctor extends Person {
     }
 
     /**
-     * Gets the doctor's name.
+     * Gets the doctor's specialization.
      * 
-     * @return The name of the doctor.
+     * @return The specialization of the doctor.
      */
-    public String getName() {
-        return name;
+    public String getSpecialization() {
+        return specialization;
     }
 
+    /**
+     * Adds a patient to the doctor's list.
+     * 
+     * @param patient The patient to be added.
+     */
+    public void addPatient(Patient patient) {
+        patients.add(patient);
+        System.out.println("Patient " + patient.getName() + " added to Doctor " + this.getName());
+    }
 
-    // Getters & Setters (To be implemented)
+    /**
+     * Gets the list of patients assigned to this doctor.
+     * 
+     * @return The list of patients.
+     */
+    public List<Patient> getPatients() {
+        return patients;
+    }
+
+    /**
+     * Returns a string representation of the doctor.
+     * 
+     * @return A formatted string containing doctor details.
+     */
+    @Override
+    public String toString() {
+        return "Doctor{" +
+            "ID='" + getId() + '\'' +
+            ", Name='" + getName() + '\'' +
+            ", Specialization='" + specialization + '\'' +
+            ", Patients Assigned=" + patients.size() +
+            '}';
+    }
 }

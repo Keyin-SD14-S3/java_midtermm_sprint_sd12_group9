@@ -33,7 +33,7 @@ import java.util.List;
      * @return The name of the patient.
      */
     public String getName() {
-        return name;
+        return super.getName(); // Calls getName() from Person
     }
 
     // Getters & Setters (To be implemented)

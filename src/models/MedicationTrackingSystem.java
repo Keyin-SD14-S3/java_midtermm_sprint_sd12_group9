@@ -3,7 +3,6 @@ package src.models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * The MedicationTrackingSystem class manages patients, doctors, medications, and prescriptions.
@@ -19,7 +18,7 @@ import java.util.Random;
  * - Restocking medications
  * 
  * @author Stephen
- * @version 1.0
+ * @version 1.8
  */
 public class MedicationTrackingSystem {
 
@@ -35,8 +34,6 @@ public class MedicationTrackingSystem {
         this.doctors = new ArrayList<>();
         this.patients = new ArrayList<>();
     }
-
-    // ========================== Search Functions ==========================
 
     /**
      * Searches for a medication by name.
@@ -93,4 +90,38 @@ public class MedicationTrackingSystem {
         System.out.println("Medication added: " + medication.getName());
     }
 
+    /**
+     * Assigns a patient to a doctor using the doctor's ID.
+     * 
+     * @param doctorId The ID of the doctor.
+     * @param patient  The patient to add.
+     */
+    public void addPatientToDoctor(String doctorId, Patient patient) {
+        for (Doctor doc : doctors) {
+            if (doc.getId().equals(doctorId)) {
+                doc.addPatient(patient);
+                System.out.println("Patient added to doctor's list.");
+                return;
+            }
+        }
+        System.out.println("Doctor not found.");
+    }
+
+    /**
+     * Retrieves the list of doctors.
+     * 
+     * @return The list of doctors.
+     */
+    public List<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    /**
+     * Retrieves the list of patients.
+     * 
+     * @return The list of patients.
+     */
+    public List<Patient> getPatients() {
+        return patients;
+    }
 }

@@ -28,19 +28,31 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    /** Gets the ID of the person. */
+    /** 
+     * Gets the ID of the person. 
+     * 
+     * @return The person's ID.
+     */
     public String getId() { return id; }
 
-    /** Gets the name of the person. */
+    /** 
+     * Gets the name of the person.
+     * 
+     * @return The person's name.
+     */
     public String getName() { return name; }
 
-    /** Gets the age of the person. */
+    /** 
+     * Gets the age of the person.
+     * 
+     * @return The person's age.
+     */
     public int getAge() { return age; }
 
-    /** Gets the phone number of the person. */
+    /** 
+     * Gets the phone number of the person.
+     * 
+     * @return The person's phone number.
+     */
     public String getPhoneNumber() { return phoneNumber; }
 }
-
-
-    // Getters & Setters (To be implemented)
-

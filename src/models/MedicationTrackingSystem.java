@@ -355,6 +355,23 @@ public class MedicationTrackingSystem {
         if (!found) {
             System.out.println("No prescriptions found for this doctor.");
         }
+        }
+
+    /**
+     * Restocks a medication by adding a specified quantity.
+     * 
+     * @param medicationId The ID of the medication to restock.
+     * @param quantity The amount to add to the existing stock.
+     */
+    public void restockMedication(String medicationId, int quantity) {
+        for (Medication med : medications) {
+            if (med.getId().equals(medicationId)) {
+                med.setQuantity(med.getQuantity() + quantity);
+                System.out.println("Restocked " + quantity + " units of " + med.getName() + ". New quantity: " + med.getQuantity());
+                return;
+            }
+        }
+        System.out.println("Medication not found.");
     }
 
 }

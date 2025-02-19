@@ -85,6 +85,12 @@ public class TestMedicationTrackingSystem {
          // ======= PRINT PRESCRIPTIONS BY DOCTOR =======
          System.out.println("\n=== Printing Prescriptions by Dr. Smith (D001) ===");
          system.printPrescriptionsByDoctor("D001");
+
+
+        // ======= RESTOCKING MEDICATIONS =======
+        System.out.println("\n=== Restocking Medications ===");
+        system.restockMedication("M101", 10); // Add 10 units to Buckleys
+        system.restockMedication("M103", 20); // Add 20 units to Ibuprofen Extra Strength
     
     }
 }

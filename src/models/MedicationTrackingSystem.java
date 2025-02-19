@@ -3,6 +3,8 @@ package src.models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
+
 
 /**
  * The MedicationTrackingSystem class manages patients, doctors, medications, and prescriptions.
@@ -90,6 +92,79 @@ public class MedicationTrackingSystem {
     public void addMedication(Medication medication) {
         medications.add(medication);
         System.out.println("Medication added: " + medication.getName());
+    }
+
+     /**
+     * Edits a medication's details by ID.
+     * 
+     * @param medicationId The ID of the medication to edit.
+     * @param newName The new name of the medication.
+     * @param newQuantity The new quantity.
+     */
+    public void editMedication(String medicationId, String newName, int newQuantity) {
+        for (Medication med : medications) {
+            if (med.getId().equals(medicationId)) {
+                med.setName(newName);
+                med.setQuantity(newQuantity);
+                System.out.println("Medication updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Medication not found.");
+    }
+
+    /**
+     * Deletes a medication from the system by ID.
+     * 
+     * @param medicationId The ID of the medication to delete.
+     */
+    public void deleteMedication(String medicationId) {
+        Iterator<Medication> iterator = medications.iterator();
+        while (iterator.hasNext()) {
+            Medication med = iterator.next();
+            if (med.getId().equals(medicationId)) {
+                iterator.remove();
+                System.out.println("Medication deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("Medication not found.");
+    }
+
+    /**
+     * Deletes a patient by ID.
+     * 
+     * @param patientId The ID of the patient to delete.
+     */
+    public void deletePatient(String patientId) {
+        Iterator<Patient> iterator = patients.iterator();
+        while (iterator.hasNext()) {
+            Patient patient = iterator.next();
+            if (patient.getId().equals(patientId)) {
+                iterator.remove();
+                System.out.println("Patient deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("Patient not found.");
+    }
+
+    /**
+     * Deletes a doctor by ID.
+     * 
+     * @param doctorId The ID of the doctor to delete.
+     */
+    public void deleteDoctor(String doctorId) {
+        Iterator<Doctor> iterator = doctors.iterator();
+        while (iterator.hasNext()) {
+            Doctor doctor = iterator.next();
+            if (doctor.getId().equals(doctorId)) {
+                iterator.remove();
+                System.out.println("Doctor deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("Doctor not found.");
     }
 
 
@@ -193,4 +268,52 @@ public class MedicationTrackingSystem {
     public List<Prescription> getPrescriptions() {
         return prescriptions;
     }
+
+     /**
+     * Generates a system-wide report of all data.
+     */
+    public void generateSystemReport() {
+        System.out.println("\n=== SYSTEM REPORT ===");
+        
+        // List all medications
+        System.out.println("\nMedications:");
+        if (medications.isEmpty()) {
+            System.out.println("No medications available.");
+        } else {
+            for (Medication med : medications) {
+                System.out.println(med);
+            }
+        }
+
+        // List all doctors
+        System.out.println("\nDoctors:");
+        if (doctors.isEmpty()) {
+            System.out.println("No doctors available.");
+        } else {
+            for (Doctor doc : doctors) {
+                System.out.println(doc);
+            }
+        }
+
+        // List all patients
+        System.out.println("\nPatients:");
+        if (patients.isEmpty()) {
+            System.out.println("No patients available.");
+        } else {
+            for (Patient pat : patients) {
+                System.out.println(pat);
+            }
+        }
+
+        // List all prescriptions
+        System.out.println("\nPrescriptions:");
+        if (prescriptions.isEmpty()) {
+            System.out.println("No prescriptions available.");
+        } else {
+            for (Prescription presc : prescriptions) {
+                System.out.println(presc);
+            }
+        }
+    }
+
 }

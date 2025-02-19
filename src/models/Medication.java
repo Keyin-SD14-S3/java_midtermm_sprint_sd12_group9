@@ -49,14 +49,24 @@ public class Medication {
     }
 
 
-      /**
+     /**
+     * Sets the name of the medication.
+     * 
+     * @param name The new name for the medication.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
      * Sets the quantity of the medication in stock.
      * 
-     * @param quantity The new quantity value.
+     * @param quantity The new stock quantity.
      */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
 
     /**
      * Returns a string representation of the medication.

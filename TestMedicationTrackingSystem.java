@@ -28,25 +28,51 @@ public class TestMedicationTrackingSystem {
         system.addMedication(med2);
         system.addMedication(med3);
         
-        // Searching for existing medication
-        system.searchMedicationByName("Ibuprofen");
-        
-        // Searching for a medication that doesn't exist
-        system.searchMedicationByName("Vitamin C");
+         // Deleting a medication
+         System.out.println("\n=== Deleting Medication ===");
+         system.deleteMedication("M102");
+ 
+         // ======= TESTING PATIENT AND DOCTOR MANAGEMENT =======
+         System.out.println("\n=== Adding Doctors and Patients ===");
+         Doctor doc1 = new Doctor("D001", "Dr. Smith", 45, "555-1234", "Cardiology");
+         Doctor doc2 = new Doctor("D002", "Dr. Jones", 50, "555-5678", "Neurology");
+         Doctor doc3 = new Doctor("D003", "Dr. Lee", 38, "555-9012", "Pediatrics");
+ 
+         Patient pat1 = new Patient("P001", "John Doe", 30, "555-1111");
+         Patient pat2 = new Patient("P002", "Jane Doe", 28, "555-2222");
+         Patient pat3 = new Patient("P003", "Alice Brown", 35, "555-3333");
+ 
+         system.getDoctors().add(doc1);
+         system.getDoctors().add(doc2);
+         system.getDoctors().add(doc3);
+         
+         system.getPatients().add(pat1);
+         system.getPatients().add(pat2);
+         system.getPatients().add(pat3);
+ 
+         // Assign patients to doctors
+         system.addPatientToDoctor("D001", pat1);
+         system.addPatientToDoctor("D002", pat2);
+         system.addPatientToDoctor("D003", pat3);
 
-        // ======= TESTING PATIENT AND DOCTOR MANAGEMENT =======
-        System.out.println("\n=== Adding Doctor and Patient ===");
-        Doctor doc1 = new Doctor("D001", "Dr. Smith", 45, "555-1234", "Cardiology");
-        Patient pat1 = new Patient("P001", "John Doe", 30, "555-5678");
-
-        system.getDoctors().add(doc1);
-        system.getPatients().add(pat1);
-
-        // Assign patient to doctor
-        system.addPatientToDoctor("D001", pat1);
+          // Editing a medication
+        System.out.println("\n=== Editing Medication ===");
+        system.editMedication("M103", "Ibuprofen Extra Strength", 50);
+ 
+         // Deleting a patient
+         System.out.println("\n=== Deleting Patient ===");
+         system.deletePatient("P001");
+ 
+         // Deleting a doctor
+         System.out.println("\n=== Deleting Doctor ===");
+         system.deleteDoctor("D002"); 
 
         // ======= TESTING PRESCRIPTION MANAGEMENT =======
         System.out.println("\n=== Adding Prescription ===");
-        system.acceptPrescription("PRESC001", "D001", "P001", "M103", LocalDate.of(2025, 6, 15));
+        system.acceptPrescription("PRESC001", "D001", "P002", "M103", LocalDate.of(2025, 6, 15));
+
+        // ======= GENERATING SYSTEM REPORT =======
+        System.out.println("\n=== Generating System Report ===");
+        system.generateSystemReport();
     }
 }

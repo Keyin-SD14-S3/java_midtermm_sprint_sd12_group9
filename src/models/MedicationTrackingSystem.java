@@ -108,17 +108,10 @@ public class MedicationTrackingSystem {
      * @param doctor The doctor to be added.
      */
     public void addDoctor(Doctor doctor) {
-        for (Doctor existingDoctor : doctors) {
-            if (existingDoctor.getId().equals(doctor.getId())) {
-                System.out.println("Error: A doctor with ID " + doctor.getId() + " already exists.");
-                return;
+        doctors.add(doctor);
+        System.out.println("Doctor added: " + doctor.getName() + " (Specialty: " + doctor.getSpecialty() + ")");
         }
-    }
-
-    doctors.add(doctor);
-    System.out.println("Doctor added: " + doctor.getName() + " (ID: " + doctor.getId() + ")");
-}
-
+    
 
     /**
      * Adds a new patient to the system, ensuring the ID is unique.

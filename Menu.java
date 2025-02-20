@@ -20,22 +20,14 @@ public class Menu {
             System.out.println(" ");
             System.out.println("=====Welcome To The Pharmacy Med Tracking System=====");
             System.out.println("What would you like to do? ");
-            System.out.println("1: Add A New Patient");
-            System.out.println("2: Add A New Doctor");
-            System.out.println("3: Add A New Medication To The Pharmacy");
-            System.out.println("4: Print System Report");
+            System.out.println("1: Adding A New Doctor/ Patient/ Medication/ Process Prescription");
+            System.out.println("2: Print all Scripts for a Specific Doctor/ Patient");
+            System.out.println("3: Edit Doctor/Patient/Medication");
+            System.out.println("4: Delete Doctor/Patient/Medication");
             System.out.println("5: Check If Meds Are Expired");
-            System.out.println("6: Process A New Prescription");
-            System.out.println("7: Print All Scripts For Specific Doctor");
-            System.out.println("8: Restock the drugs in the pharmacy");
-            System.out.println("9: print all scripts for specific patient");
-            System.out.println("10: Delete Patient");
-            System.out.println("11: Delete Doctor");
-            System.out.println("12: Delete Medication");
-            System.out.println("13: Edit Patient");
-            System.out.println("14: Edit Doctor");
-            System.out.println("15: Edit Medication");
-            System.out.println("16: Exit");
+            System.out.println("6: Restock the drugs in the pharmacy");
+            System.out.println("7: Print System Report");
+            System.out.println("8: Exit");
 
             System.out.print("Enter your choice: ");
             int option = scanner.nextInt();
@@ -43,61 +35,142 @@ public class Menu {
 
             switch (option) {
                 case 1:
-                    addPatient(scanner,system);
+                    addRecordsMenu(scanner, system);
                     break;
                 case 2:
-                    addANewDoctor(scanner,system);
+                    printPrescriptionsMenu(scanner, system);
                     break;
                 case 3:
-                    addNewMedicationToPharmacy(scanner,system);
+                    editRecordsMenu(scanner, system);
                     break;
                 case 4:
-                    printPharmacyReport(system);
+                    deleteRecordsMenu(scanner, system);
                     break;
                 case 5:
                     checkExpiredMeds(system);
                     break;
                 case 6:
-                    processANewScript(scanner,system);
+                    restockPharmacyDrugs(scanner, system);
                     break;
                 case 7:
-                    printScriptsForSpecificDoctor(scanner,system);
+                    printPharmacyReport(system);
                     break;
                 case 8:
-                    restockPharmacyDrugs(scanner,system);
-                    break;
-                case 9:
-                    printAllScriptsForPatientByName(scanner,system);
-                    break;
-                case 10:
-                    deletePatient(scanner, system);
-                    break;
-                case 11:
-                    deleteDoctor(scanner, system);
-                    break;
-                case 12:
-                    deleteMedication(scanner, system);
-                    break;
-                case 13:
-                    editPatient(scanner, system);
-                    break;
-                case 14:
-                    editDoctor(scanner, system);
-                    break;
-                case 15:
-                    editMedication(scanner, system);
-                    break;
-                case 16:
                     exit = true;
-                    System.out.println("Exiting The System! Good Bye!");
+                    System.out.println("Exiting the system. Goodbye!");
                     break;
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Invalid option. Please try again.");
             }
+        }
+    }
+
+
+    private static void addRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
+        System.out.println("\n--- Add Records ---");
+        System.out.println("1: Add a New Doctor");
+        System.out.println("2: Add a New Patient");
+        System.out.println("3: Add a New Medication");
+        System.out.println("4: Process a New Prescription");
+
+
+        System.out.print("Select an option: ");
+        int addOption = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (addOption) {
+            case 1:
+                addANewDoctor(scanner, system);
+                break;
+            case 2:
+                addPatient(scanner, system);
+                break;
+            case 3:
+                addNewMedicationToPharmacy(scanner, system);
+                break;
+            case 4:
+                processANewScript(scanner, system);
+                break;
+            default:
+                System.out.println("Invalid option.");
         }
 
     }
 
+
+
+    private static void printPrescriptionsMenu(Scanner scanner, MedicationTrackingSystem system) {
+        System.out.println("\n--- Print Prescriptions ---");
+        System.out.println("1: Print All Scripts for a Specific Doctor");
+        System.out.println("2: Print All Scripts for a Specific Patient");
+
+
+        System.out.print("Select an option: ");
+        int prescriptionOption = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (prescriptionOption) {
+            case 1:
+                printScriptsForSpecificDoctor(scanner, system);
+                break;
+            case 2:
+                printAllScriptsForPatientByName(scanner, system);
+                break;
+            default:
+                System.out.println("Invalid option.");
+        }
+        scanner.nextLine(); // Clear buffer
+    }
+
+    private static void editRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
+        System.out.println("\n--- Edit Records ---");
+        System.out.println("1: Edit Doctor");
+        System.out.println("2: Edit Patient");
+        System.out.println("3: Edit Medication");
+
+        System.out.print("Select an option: ");
+        int editOption = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (editOption) {
+            case 1:
+                editDoctor(scanner, system);
+                break;
+            case 2:
+                editPatient(scanner, system);
+                break;
+            case 3:
+                editMedication(scanner, system);
+                break;
+            default:
+                System.out.println("Invalid option.");
+        }
+    }
+
+    private static void deleteRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
+        System.out.println("\n--- Delete Records ---");
+        System.out.println("1: Delete Doctor");
+        System.out.println("2: Delete Patient");
+        System.out.println("3: Delete Medication");
+
+        System.out.print("Select an option: ");
+        int deleteOption = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        switch (deleteOption) {
+            case 1:
+                deleteDoctor(scanner, system);
+                break;
+            case 2:
+                deletePatient(scanner, system);
+                break;
+            case 3:
+                deleteMedication(scanner, system);
+                break;
+            default:
+                System.out.println("Invalid option.");
+        }
+    }
 
 
     private static void addPatient(Scanner scanner, MedicationTrackingSystem system) {
@@ -228,21 +301,21 @@ public class Menu {
         System.out.print("Enter Patient ID to delete: ");
         String patientId = scanner.nextLine();
         system.deletePatient(patientId);
-        System.out.println("Patient deleted successfully!");
+
     }
 
     private static void deleteDoctor(Scanner scanner, MedicationTrackingSystem system) {
         System.out.print("Enter Doctor ID to delete: ");
         String doctorId = scanner.nextLine();
         system.deleteDoctor(doctorId);
-        System.out.println("Doctor deleted successfully!");
+
     }
 
     private static void deleteMedication(Scanner scanner, MedicationTrackingSystem system) {
         System.out.print("Enter Medication ID to delete: ");
         String medicationId = scanner.nextLine();
         system.deleteMedication(medicationId);
-        System.out.println("Medication deleted successfully!");
+
     }
 
     private static void editPatient(Scanner scanner, MedicationTrackingSystem system) {

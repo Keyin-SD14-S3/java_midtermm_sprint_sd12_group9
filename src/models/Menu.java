@@ -1,5 +1,4 @@
 /*
-
 This is an example menu that is set up to show you a way of structuring your project.
 this doesn't have all requirements in it please refer to the sprint doc to view all requirements
  */
@@ -67,32 +66,41 @@ public class Menu {
 
 
     private static void addRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
-        System.out.println("\n--- Add Records ---");
-        System.out.println("1: Add a New Doctor");
-        System.out.println("2: Add a New Patient");
-        System.out.println("3: Add a New Medication");
-        System.out.println("4: Process a New Prescription");
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Add Records ---");
+            System.out.println("1: Add a New Doctor");
+            System.out.println("2: Add a New Patient");
+            System.out.println("3: Add a New Medication");
+            System.out.println("4: Process a New Prescription");
+            System.out.println("5: Back to Main Menu");
 
 
-        System.out.print("Select an option: ");
-        int addOption = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+            System.out.print("Select an option: ");
+            int addOption = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-        switch (addOption) {
-            case 1:
-                addANewDoctor(scanner, system);
-                break;
-            case 2:
-                addPatient(scanner, system);
-                break;
-            case 3:
-                addNewMedicationToPharmacy(scanner, system);
-                break;
-            case 4:
-                processANewScript(scanner, system);
-                break;
-            default:
-                System.out.println("Invalid option.");
+            switch (addOption) {
+                case 1:
+                    addANewDoctor(scanner, system);
+                    break;
+                case 2:
+                    addPatient(scanner, system);
+                    break;
+                case 3:
+                    addNewMedicationToPharmacy(scanner, system);
+                    break;
+                case 4:
+                    processANewScript(scanner, system);
+                    break;
+                case 5:
+                    back = true;
+                    System.out.println("Exiting the Sub_Menu");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
+
         }
 
     }
@@ -100,75 +108,99 @@ public class Menu {
 
 
     private static void printPrescriptionsMenu(Scanner scanner, MedicationTrackingSystem system) {
-        System.out.println("\n--- Print Prescriptions ---");
-        System.out.println("1: Print All Scripts for a Specific Doctor");
-        System.out.println("2: Print All Scripts for a Specific Patient");
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Print Prescriptions ---");
+            System.out.println("1: Print All Scripts for a Specific Doctor");
+            System.out.println("2: Print All Scripts for a Specific Patient");
+            System.out.println("3: Back to Main Menu");
 
 
-        System.out.print("Select an option: ");
-        int prescriptionOption = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+            System.out.print("Select an option: ");
+            int prescriptionOption = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-        switch (prescriptionOption) {
-            case 1:
-                printScriptsForSpecificDoctor(scanner, system);
-                break;
-            case 2:
-                printAllScriptsForPatientByName(scanner, system);
-                break;
-            default:
-                System.out.println("Invalid option.");
+            switch (prescriptionOption) {
+                case 1:
+                    printScriptsForSpecificDoctor(scanner, system);
+                    break;
+                case 2:
+                    printAllScriptsForPatientByName(scanner, system);
+                    break;
+                case 3:
+                    back = true;
+                    System.out.println("Exiting the Sub_Menu");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
         }
-        scanner.nextLine(); // Clear buffer
+
     }
 
     private static void editRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
-        System.out.println("\n--- Edit Records ---");
-        System.out.println("1: Edit Doctor");
-        System.out.println("2: Edit Patient");
-        System.out.println("3: Edit Medication");
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Edit Records ---");
+            System.out.println("1: Edit Doctor");
+            System.out.println("2: Edit Patient");
+            System.out.println("3: Edit Medication");
+            System.out.println("4: Back to Main Menu");
 
-        System.out.print("Select an option: ");
-        int editOption = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+            System.out.print("Select an option: ");
+            int editOption = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-        switch (editOption) {
-            case 1:
-                editDoctor(scanner, system);
-                break;
-            case 2:
-                editPatient(scanner, system);
-                break;
-            case 3:
-                editMedication(scanner, system);
-                break;
-            default:
-                System.out.println("Invalid option.");
+            switch (editOption) {
+                case 1:
+                    editDoctor(scanner, system);
+                    break;
+                case 2:
+                    editPatient(scanner, system);
+                    break;
+                case 3:
+                    editMedication(scanner, system);
+                    break;
+                case 4:
+                    back = true;
+                    System.out.println("Exiting the Sub_Menu");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
         }
     }
 
     private static void deleteRecordsMenu(Scanner scanner, MedicationTrackingSystem system) {
-        System.out.println("\n--- Delete Records ---");
-        System.out.println("1: Delete Doctor");
-        System.out.println("2: Delete Patient");
-        System.out.println("3: Delete Medication");
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Delete Records ---");
+            System.out.println("1: Delete Doctor");
+            System.out.println("2: Delete Patient");
+            System.out.println("3: Delete Medication");
+            System.out.println("4: Back to Main Menu");
 
-        System.out.print("Select an option: ");
-        int deleteOption = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+            System.out.print("Select an option: ");
+            int deleteOption = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-        switch (deleteOption) {
-            case 1:
-                deleteDoctor(scanner, system);
-                break;
-            case 2:
-                deletePatient(scanner, system);
-                break;
-            case 3:
-                deleteMedication(scanner, system);
-                break;
-            default:
-                System.out.println("Invalid option.");
+            switch (deleteOption) {
+                case 1:
+                    deleteDoctor(scanner, system);
+                    break;
+                case 2:
+                    deletePatient(scanner, system);
+                    break;
+                case 3:
+                    deleteMedication(scanner, system);
+                    break;
+                case 4:
+                    back = true;
+                    System.out.println("Exiting the Sub_Menu");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+            }
         }
     }
 

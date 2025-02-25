@@ -30,59 +30,52 @@ Once the code is compiled, run the Menu.java class:
 o	Press the “Run” button to execute the Menu.java class.
  
 # Step 5: Interacting with the Program
+## Console Menu for the Pharmacy Management System
+
 Once the program is running, you’ll be presented with a menu in the console with the following options:
 
-=====Welcome To The Pharmacy Med Tracking System=====
+```
+===== Welcome To The Pharmacy Med Tracking System =====
 
 What would you like to do?
 
 1: Adding A New Doctor/ Patient/ Medication/ Process Prescription
 
-1: Add a New Doctor
-
-2: Add a New Patient
-
-3: Add a New Medication
-
-4: Process a New Prescription
-
-5: Back to Main Menu
+   1: Add a New Doctor  
+   2: Add a New Patient  
+   3: Add a New Medication  
+   4: Process a New Prescription  
+   5: Back to Main Menu  
 
 2: Print all Scripts for a Specific Doctor/ Patient
 
-1: Print All Scripts for a Specific Doctor
-
-2: Print All Scripts for a Specific Patient
-
-3: Back to Main Menu
+   1: Print All Scripts for a Specific Doctor  
+   2: Print All Scripts for a Specific Patient  
+   3: Back to Main Menu  
 
 3: Edit Doctor/Patient/Medication
 
-1: Edit Doctor
-
-2: Edit Patient
-
-3: Edit Medication
-
-4: Back to Main Menu
+   1: Edit Doctor  
+   2: Edit Patient  
+   3: Edit Medication  
+   4: Back to Main Menu  
 
 4: Delete Doctor/Patient/Medication
 
-1: Delete Doctor
+   1: Delete Doctor  
+   2: Delete Patient  
+   3: Delete Medication  
+   4: Back to Main Menu  
 
-2: Delete Patient
+5: Check If Meds Are Expired  
 
-3: Delete Medication
+6: Restock the drugs in the pharmacy  
 
-4: Back to Main Menu
+7: Print System Report  
 
-5: Check If Meds Are Expired
+8: Exit  
+```
 
-6: Restock the drugs in the pharmacy
-
-7: Print System Report
-
-8: Exit
 
 You can choose an option by entering the corresponding number and pressing Enter. You need to choose options for the submenu, and we can Exit from the Submenu to get back to the main Menu. You will be prompted to provide details based on the selected option (e.g., adding, deletion, modification for new patient, medication, etc.). The status of specific scenarios and system reports can be retrieved by selecting specific options.
  

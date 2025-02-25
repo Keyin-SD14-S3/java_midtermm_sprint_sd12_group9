@@ -31,25 +31,60 @@ o	Press the “Run” button to execute the Menu.java class.
  
 # Step 5: Interacting with the Program
 Once the program is running, you’ll be presented with a menu in the console with the following options:
+
 =====Welcome To The Pharmacy Med Tracking System=====
+
 What would you like to do?
-1: Add A New Patient
-2: Add A New Doctor
-3: Add A New Medication To The Pharmacy
-4: Print System Report
+
+1: Adding A New Doctor/ Patient/ Medication/ Process Prescription
+
+1: Add a New Doctor
+
+2: Add a New Patient
+
+3: Add a New Medication
+
+4: Process a New Prescription
+
+5: Back to Main Menu
+
+2: Print all Scripts for a Specific Doctor/ Patient
+
+1: Print All Scripts for a Specific Doctor
+
+2: Print All Scripts for a Specific Patient
+
+3: Back to Main Menu
+
+3: Edit Doctor/Patient/Medication
+
+1: Edit Doctor
+
+2: Edit Patient
+
+3: Edit Medication
+
+4: Back to Main Menu
+
+4: Delete Doctor/Patient/Medication
+
+1: Delete Doctor
+
+2: Delete Patient
+
+3: Delete Medication
+
+4: Back to Main Menu
+
 5: Check If Meds Are Expired
-6: Process A New Prescription
-7: Print All Scripts For Specific Doctor
-8: Restock the drugs in the pharmacy
-9: Print all scripts for specific patient
-10: Delete Patient
-11: Delete Doctor
-12: Delete Medication
-13: Edit Patient
-14: Edit Doctor
-15: Edit Medication
-16: Exit
-Choose an option by entering the corresponding number and pressing Enter. You will be prompted to provide details based on the selected option (e.g., adding a new patient or editing a medication).
+
+6: Restock the drugs in the pharmacy
+
+7: Print System Report
+
+8: Exit
+
+You can choose an option by entering the corresponding number and pressing Enter. You need to choose options for the submenu, and we can Exit from the Submenu to get back to the main Menu. You will be prompted to provide details based on the selected option (e.g., adding, deletion, modification for new patient, medication, etc.). The status of specific scenarios and system reports can be retrieved by selecting specific options.
  
 # Step 6: Exiting the Program
 To exit the program, select option 16 and press Enter. The program will terminate, and you will see the message:
